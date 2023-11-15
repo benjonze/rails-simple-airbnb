@@ -1,0 +1,26 @@
+<h1>All flats</h1>
+
+<% @flats.each do |flat| %>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= flat.name %></h5>
+      <p class="card-text"><%= flat.address %></p>
+      <div class="flex">
+        <div class="flex align-items-center">
+          <i class="fa-solid fa-people-line"></i>
+          <span><%= flat.number_of_guests %></span>
+        </div>
+        <div class="flex align-items-center ms-3">
+          <i class="fa-solid fa-euro-sign"></i>
+          <span><%= flat.price_per_night %></span>
+        </div>
+      </div>
+      <div>
+        <%= link_to "More info", "/" %> |
+        <%= link_to "Edit", "/" %> |
+        <%= link_to "Remove", "/" %>
+      </div>
+    </div>
+  </div>
+<% end %>
